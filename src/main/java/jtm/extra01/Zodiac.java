@@ -32,7 +32,7 @@ public class Zodiac {
 	         zodiac = "Sagittarius";
 	    } else if (month == 12 && day <= 22 && day<=31 || month == 1 && day >=1 && day <= 20) {
 	        zodiac = "Capricorn";
-	    } else if (month == 1 && day >= 21 && day<=31 || month == 2 && day >=1 && day <= 19) {
+		} else if (month == 1 && day >= 21 && day <= 31 || month == 2 && day >= 1 && day <= 19) {
 	         zodiac = "Aquarius";
 	    } else if (month == 2 && day >= 20 && day<=29 || month == 3 && day >=1 && day <=20) {
 	         zodiac = "Pisces";

@@ -13,6 +13,14 @@ public class GetOne {
 		// 6->3->10->5->16->8->4->2->1. Iteration count=8.
 		// HINT: Use while loop.
 		int iterationCount = 0;
+		while (number != 1) {
+			if (number % 2 == 0) {
+				number = number / 2;
+			} else if (number % 2 != 0) {
+				number = number * 3 + 1;
+			}
+			iterationCount++;
+		}
 		return iterationCount;
 	}
 
