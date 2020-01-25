@@ -32,6 +32,16 @@ public class GetOne {
 		// And return 3, because it has the biggest count of iterations.
 		// (If count of iterations is the same for several numbers, return
 		// smallest number).
+		//int number=0;
+		int max=0; //from 1 to maxNumber which has the biggest count if iteration
+		int iterCount=0;
+		for (int i=0; i<maxNumber;i++){
+			iterCount=iterations(i);
+			if (i>iterCount){
+			max=i;
+			}
+		}
+		
 		return 0;
 	}
 

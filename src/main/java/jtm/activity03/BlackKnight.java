@@ -24,6 +24,10 @@ public class BlackKnight {
 		// Reset total numbers of total and alive knights to zero
 		// START
 
+		BlackKnight[] newKnights = new BlackKnight[initialNumber];
+		totalKnights = 0;
+		aliveKnights = 0;
+
 		// END
 	}
 
@@ -34,9 +38,23 @@ public class BlackKnight {
 		// 3. put reference of this knight into next free cell of knights static
 		// array
 		// 4. increase number of total and alive knights of static counters
-		// HINT: use "this.name" to access name of knight which otherwise is shadowed
+		// HINT: use "this.name" to access name of knight which otherwise is
+		// shadowed
 		// by parameter of constructor, which is also called "name"
 		// START
+
+		this.name = name;
+		this.arms = 2;
+		legs = 2;
+		head = 1;
+		alive = true;
+
+		for (int i = 0; i < knights.length; i++) {
+			if (knights[i] == null) {
+				knights[i] = this;
+				break;
+			}
+		}
 
 		// END
 	}
@@ -47,6 +65,13 @@ public class BlackKnight {
 		// If knight has some arms, cut one off and return "Bugger!"
 		// Else return just "Haah!"
 		// START
+		if (alive == true) {
+			this.arms = this.arms--;
+			System.out.println("Bugger!");
+		} else if (alive == false) {
+			System.out.println("Only chicken beats dead!");
+		} else
+			System.out.println("Haah!");
 
 		// END
 		return "";
@@ -58,6 +83,13 @@ public class BlackKnight {
 		// If knight has some legs, cut one off and return "Bollocks!"
 		// Else return just "Haah!"
 		// START
+		if (alive == true) {
+			this.legs = this.legs--;
+			System.out.println("Bollocks!");
+		} else if (alive == false) {
+			System.out.println("Only chicken beats dead!");
+		} else
+			System.out.println("Haah!");
 
 		// END
 		return "";
@@ -74,6 +106,18 @@ public class BlackKnight {
 		// Else return "You'l burn in hell forever!"
 		// START
 
+		if (alive == false) {
+			System.out.println("Only chicken beats dead!");
+		} else if (alive == true) {
+			this.head = this.head--;
+			aliveKnights--;
+			deadKnights++;
+			if (aliveKnights != 0) {
+				System.out.println("You'l newer win! Arthur, Cnut will still fight!");
+			} else
+				System.out.println("You'l burn in hell forever!");
+		}
+
 		// END
 		return "";
 	}
@@ -85,6 +129,9 @@ public class BlackKnight {
 		// e.g. if Cnut and Arthur are still alive return Cnut, Arthur
 		// If only Arthur is alive return Arthur
 		// If no one is alive return empty string
+		
+		
+		
 		return null;
 	}
 	// END

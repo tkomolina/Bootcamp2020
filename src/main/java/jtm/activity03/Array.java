@@ -16,6 +16,12 @@ public class Array {
 		// https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html
 		// START
 
+		array = new int[7];
+		for (int i = 0; i < 7; i++) {
+			array[i] = Integer.parseInt(args[i]);
+		}
+		Arrays.sort(array);
+
 		// END
 	}
 
@@ -23,6 +29,8 @@ public class Array {
 		// TODO print content of array on standard output
 		// Hint: use Arrays.toString(array) method for this
 		// START
+		Arrays.sort(array);
+		System.out.println(Arrays.toString(array));
 
 		// END
 	}
@@ -30,9 +38,12 @@ public class Array {
 	public static int[] returnSortedArray() {
 		// TODO return reference to this array
 		// START
+		
+		Arrays.sort(array);
 
 		// END
-		return null;
+		return array;
 	}
+	
 
 }
