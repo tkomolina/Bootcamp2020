@@ -2,6 +2,8 @@ package jtm.activity03;
 
 import java.util.Arrays;
 
+import static java.util.Arrays.sort;
+
 public class Array {
 	static int[] array;
 
@@ -17,11 +19,7 @@ public class Array {
 		// START
 
 		array = new int[7];
-		for (int i = 0; i < array.length; i++) {
-			array[i] = Integer.parseInt(args[i]);
-		}
-		Arrays.sort(array);
-
+		for (int i = 0; i < array.length; i++) array[i] = Integer.parseInt(args[i]);
 		// END
 	}
 
@@ -29,7 +27,7 @@ public class Array {
 		// TODO print content of array on standard output
 		// Hint: use Arrays.toString(array) method for this
 		// START
-		Arrays.sort(array);
+		sort(array);
 		System.out.println(Arrays.toString(array));
 
 		// END
@@ -38,11 +36,10 @@ public class Array {
 	public static int[] returnSortedArray() {
 		// TODO return reference to this array
 		// START
-		
+		//int[] sortedArray;
 		Arrays.sort(array);
-
 		// END
-		return array;
+		return array ;
 	}
 	
 

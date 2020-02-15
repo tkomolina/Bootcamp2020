@@ -118,7 +118,7 @@ public class BlackKnight {
             aliveKnights--;
             deadKnights++;
             this.alive = false;
-            if (aliveKnights != 0) {
+            if (aliveKnights > 0) {
                 return "You'l newer win! " + aliveKnights() + " will still fight!";
             } else
                 return "You'l burn in hell forever!";
@@ -131,12 +131,14 @@ public class BlackKnight {
     private String aliveKnights() {
         String aliveString = "";
         for (int i = 0; i < knights.length; i++) {
-            if (this.alive || aliveKnights > 1) {
-                aliveString = aliveString + ", " + this.name;
-                break;
-            } else if (this.alive || aliveKnights == 1) {
-                aliveString = this.name;
-                break;
+            if (this.alive) {
+                if (aliveKnights > 1) {
+                    aliveString = aliveString + ", " + this.name;
+                    break;
+                } else if (aliveKnights == 1) {
+                    aliveString = this.name;
+
+                } else aliveString = "";
             }
         }
         // TODO
@@ -147,6 +149,5 @@ public class BlackKnight {
         return aliveString;
     }
     // END
+
 }
-
-

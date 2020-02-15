@@ -16,25 +16,18 @@ public class PhoneNumber {
      */
 
     public static String createPhoneNumber(int[] numbers) {
-    	/*String a ="aaa";
-    	a=a+1; // the result will be "aaa1"
-    	String str="";
-    	for (int i=0;i<numbers.length;i++){
-    		str=str+1;
-    	}*/
-    	
-    	String phoneNumber="(";
-    	phoneNumber=phoneNumber + numbers[0]+ numbers[1] + numbers[2]+ ") "+ numbers[3];
-    /*	for (int i=0;i<numbers.length;i++){
-    		if (i==2){
-    			phoneNumber=phoneNumber+numbers[i]+") ";
-    	} else if (i==5){
-    		phoneNumber=phoneNumber+numbers[i]+"-";
-    	}
-    		phoneNumber=phoneNumber+numbers[i];
-    	}*/
-    	System.out.println(phoneNumber);
-    	
-      return phoneNumber;
+
+        String str = "";
+        for (int i=0; i < numbers.length; i++){
+            if (i == 0){
+                str = str + "(";
+            }else if (i == 3){
+                str = str + ") ";
+            }else if (i == 6){
+                str = str + "-";
+            }
+            str = str + numbers[i];
+        }
+        return str;
     }
 }
