@@ -89,15 +89,16 @@ public class BlackKnight {
         // Else return just "Haah!"
         // START
         String result = "";
-        if (!alive) {
-            result = "Only chicken beats dead!";
-        } else if (alive) {
+        if (alive) {
             if (this.legs != 0) {
                 this.legs--;
                 result = "Bollocks!";
-            } else
+            } else if (this.legs == 0) {
                 result = "Haah!";
-            // END
+                // END
+            }
+        } else if (!alive) {
+            result = "Only chicken beats dead!";
         }
         return result;
     }
@@ -113,40 +114,51 @@ public class BlackKnight {
         // Where "Arthur, Cnut" are names of still alive knights
         // Else return "You'l burn in hell forever!"
         // START
-        if (alive) {
-            this.head--;
-            aliveKnights--;
-            deadKnights++;
-            this.alive = false;
-            if (aliveKnights > 0) {
-                return "You'l newer win! " + aliveKnights() + " will still fight!";
-            } else
-                return "You'l burn in hell forever!";
-        } else
+
+        if (!this.alive) {
             return "Only chicken beats dead!";
+        } else
+            this.head--;
+        aliveKnights--;
+        deadKnights++;
+        this.alive = false;
+
+        if (aliveKnights > 0) {
+            return "You'l newer win! " + aliveKnights() + " will still fight!";
+        } else return "You'l burn in hell forever!";
         // END
     }
 
     // START
     private String aliveKnights() {
-        String aliveString = "";
-        for (int i = 0; i < knights.length; i++) {
-            if (this.alive) {
-                if (aliveKnights > 1) {
-                    aliveString = aliveString + ", " + this.name;
-                    break;
-                } else if (aliveKnights == 1) {
-                    aliveString = this.name;
+        //  List<String> aliveInList = new ArrayList<>(); // iespejams uztaisit stringu ar vardiem caur List
+        //  String aliveList = String.join(", ", aliveInList);
 
-                } else aliveString = "";
+        String aliveList = "";
+        if (aliveKnights > 1) {
+            for (int i = 0; i < knights.length; i++) {
+                if (knights[i].alive == true) {
+                    aliveList = aliveList + knights[i].name + ", ";
+                }
             }
+            aliveList = aliveList.substring(0, aliveList.length() - 2);
+        } else if (aliveKnights == 1) {
+            for (int i = 0; i < knights.length; i++) {
+                if (knights[i].alive == true) {
+                    aliveList = knights[i].name;
+                }
+            }
+        } else if (aliveKnights == 0) {
+            aliveList = "";
         }
+
+
         // TODO
         // Build comma separated string of knights who are still alive
         // e.g. if Cnut and Arthur are still alive return Cnut, Arthur
         // If only Arthur is alive return Arthur
         // If no one is alive return empty string
-        return aliveString;
+        return aliveList;
     }
     // END
 

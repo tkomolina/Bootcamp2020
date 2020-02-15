@@ -18,28 +18,29 @@ public class Array {
 		// https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html
 		// START
 
-		array = new int[7];
-		for (int i = 0; i < array.length; i++) array[i] = Integer.parseInt(args[i]);
+		array = new int[args.length];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = Integer.parseInt(args[i]);
+		}
 		// END
+	returnSortedArray();
+	printSortedArray();
 	}
 
 	public static void printSortedArray() {
 		// TODO print content of array on standard output
 		// Hint: use Arrays.toString(array) method for this
 		// START
-		sort(array);
 		System.out.println(Arrays.toString(array));
-
 		// END
 	}
 
 	public static int[] returnSortedArray() {
 		// TODO return reference to this array
 		// START
-		//int[] sortedArray;
 		Arrays.sort(array);
 		// END
-		return array ;
+		return array;
 	}
 	
 
