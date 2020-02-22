@@ -38,7 +38,6 @@ public class TeacherManager {
             e.printStackTrace();
         }
     }
-
     /*
      * Returns a Teacher instance represented by the specified ID.
      */

@@ -10,8 +10,10 @@ public class Main {
 
         //Check Teacher table in MySQL workbench if insert works
 
-        Teacher teacher = new Teacher(100,"Roman","Franklin");
-        System.out.println(teacherManager.insertTeacher(teacher));
+        Teacher teacher = new Teacher(100,"Roman","Berzins");
+       // teacherManager.insertTeacher(teacher);
+        teacherManager.updateTeacher(teacher);
+        //System.out.println(teacherManager.insertTeacher(teacher));
 
 
         //Use same approach for other methods

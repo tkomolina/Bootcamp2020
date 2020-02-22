@@ -27,7 +27,22 @@ public class DiceHistogram {
         1|####### 7
      */
     public static String histogram(final int results[]) {
-        return null;
+        String hash = "";
+        String resultString="";
+        for (int i = results.length - 1; i >= 0; i--) {
+            if (results[i] != 0) {
+                for (int j=0; j<results[i];j++){
+                    hash=hash+"#";
+                }
+                resultString= resultString+ (i+1) + "|" + hash+ " " + results[i] + "\n";
+                hash="";
+
+            } else resultString= resultString+(i+1) + "|" + "\n";
+
+        } System.out.print(resultString);
+
+        return resultString;
     }
 
 }
+// System.out.print(resultString);
