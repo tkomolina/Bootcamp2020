@@ -53,7 +53,7 @@ public class VendingMachineTest {
     public void testNonCaseSensitive() {
         machine.addProducts("APPLE", 1.00);
         machine.depositCoins(1.00);
-        Assert.assertEquals("apple", machine.chooseProduct("apple").toLowerCase());
+        Assert.assertEquals("apple", machine.chooseProduct("APPLE").toLowerCase());
 
     }
 
@@ -70,8 +70,6 @@ public class VendingMachineTest {
         machine.depositCoins(5.00);
         Assert.assertNull(machine.chooseProduct("cucumber"));
     }
-
-
 
     @Test
     public void testEjectCoins() {

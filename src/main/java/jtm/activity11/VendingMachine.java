@@ -60,7 +60,7 @@ public class VendingMachine {
             return null;
         }
             //OR use this.products.get(product)!=null
-            if (this.coinsInMachine > this.products.get(product.toLowerCase())) {
+            if (this.coinsInMachine >= this.products.get(product.toLowerCase())) {
                 this.coinsInMachine = this.coinsInMachine - this.products.get(product.toLowerCase());
                 return product;
             } else return "balance not enough";
